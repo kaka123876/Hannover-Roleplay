@@ -1,0 +1,212 @@
+:root {
+  --blue: #007bff;
+  --blue-dark: #0056b3;
+  --light-bg: #f0f4f8;
+  --text: #212529;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+header {
+  background: url('https://cdn.discordapp.com/attachments/1373098591639306421/1395275639552213064/Nordbruck_Roleplay_Logo_Design.png?ex=6879db33&is=687889b3&hm=26f3b5f2d4edd19d5b7388cc27045343027f82e8099c1bb4864319204a2db7a5&') center/cover no-repeat;
+  padding: 5rem 1rem 6rem;
+  text-align: center;
+  color: var(--white);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease-out;
+}
+
+header p {
+  font-size: 1.35rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  background-color: var(--blue-dark);
+  padding: 1rem 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  background-color: var(--white);
+  color: var(--blue-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+nav a:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+main {
+  padding: 4rem 1rem;
+}
+
+section {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+}
+
+h2 {
+  color: var(--blue-dark);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-left: 5px solid var(--blue);
+  padding-left: 1rem;
+}
+
+p, li {
+  font-size: 1.05rem;
+  color: #444;
+}
+
+ul {
+  padding-left: 1.5rem;
+  list-style: square;
+}
+
+ul li {
+  margin: 0.75rem 0;
+}
+
+.cta {
+  text-align: center;
+}
+
+.discord-btn {
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: var(--blue-dark);
+}
+
+footer {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.25rem;
+  }
+
+  nav .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+}
